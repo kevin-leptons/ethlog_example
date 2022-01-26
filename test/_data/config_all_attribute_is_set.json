@@ -1,0 +1,43 @@
+{
+    "mongodb_endpoint": {
+        "url": "mongodb://localhost/foo_bar",
+        "username": "foo",
+        "password": "***"
+    },
+    "main_bsc_endpoints": [
+        {
+            "url": "https://foo.bar",
+            "username": "zoo",
+            "password": "***",
+            "quota": {
+                "batch_limit": 555,
+                "batch_timespan": 9999
+            },
+            "log_safe_gap": 333,
+            "log_range_boundary": 13579,
+            "log_time_border": 24680,
+            "log_size_border": 112233,
+            "log_quantity_border": 332211
+        }
+    ],
+    "backup_bsc_endpoints": [
+        {
+            "url": "https://zoo.foo",
+            "username": "noop",
+            "password": "***",
+            "quota": {
+                "batch_limit": 444,
+                "batch_timespan": 555
+            },
+            "log_safe_gap": 666,
+            "log_range_boundary": 777,
+            "log_time_border": 888,
+            "log_size_border": 999,
+            "log_quantity_border": 1234
+        }
+    ],
+    "pool_address": "0xd1ab4f5cd13f2ad8ed05e81590edcf49e46a8e46",
+    "begin_block_number": 88889999,
+    "host": "1.2.3.4",
+    "port": 1234
+}

@@ -1,0 +1,12 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "verride by ../service/api_specification.js",
+        "description": "override by ../../package.json",
+        "version": "0.0.0"
+    },
+    "servers": [],
+    "paths": {
+        "/pool_event": {"$ref": "./pool_event.json"}
+    }
+}

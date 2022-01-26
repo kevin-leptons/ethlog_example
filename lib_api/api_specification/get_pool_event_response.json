@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "block_number",
+        "transaction_index",
+        "log_index",
+        "transaction_hash",
+        "reserve0",
+        "reserve1"
+    ],
+    "properties": {
+        "block_number": {"$ref": "./base.json#/heximal"},
+        "transaction_index": {"$ref": "./base.json#/uint16"},
+        "log_index": {"$ref": "./base.json#/uint16"},
+        "transaction_hash": {"$ref": "./base.json#/heximal32"},
+        "reserve0": {"$ref": "./base.json#/heximal"},
+        "reserve1": {"$ref": "./base.json#/heximal"}
+    }
+}

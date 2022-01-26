@@ -1,0 +1,47 @@
+{
+    "heroBaseAttribute": {
+        "strength": 232,
+        "agility": 154,
+        "intelligence": 140
+    },
+    "damage": 232,
+    "deltaDamage": 0,
+    "attackRange": 0,
+    "attackSpeedPoint": 0,
+    "armor": 22.000002,
+    "dodgeRate": 0,
+    "coolDownReduction": 0.28,
+    "effectReduction": 0,
+    "baseAttackTime": 0,
+    "lifeStealRate": 0,
+    "reflectionRate": 0,
+    "name": "Poing",
+    "sex": "female",
+    "class": "fire",
+    "skills": [
+        {
+            "name": "fire",
+            "type": "passive"
+        },
+        {
+            "name": "fire",
+            "type": "active"
+        },
+        {
+            "name": "fire",
+            "type": "active"
+        },
+        {
+            "name": "fire",
+            "type": "active"
+        }
+    ],
+    "health": 13920,
+    "moveventSpeed": 600,
+    "healthRegen": 46.4,
+    "magicDamage": 2.8,
+    "critRate": 10,
+    "critDamage": 60,
+    "attackSpeed": 0.61600006,
+    "magicResist": 15
+}

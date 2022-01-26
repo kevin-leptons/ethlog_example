@@ -1,0 +1,7 @@
+{
+    "main_bsc_endpoints": [
+        {
+            "url": "http://foo.bar"
+        }
+    ]
+}

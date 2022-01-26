@@ -1,0 +1,125 @@
+// Configuration file loading by order:
+//  * config.json
+//  * ~/.config/ethlog_example/config.json
+//  * /etc/ethlog_example/config.json
+// And it's permission mode must be at least 0o600.
+
+{
+    // A MongoDB server for saving data.
+    //
+    // [Default] {}
+    "mongodb_endpoint": {
+        // URL refers to MongoDB server v5.
+        //
+        // [Default] "mongodb://localhost/ethlog_example"
+        "url": "mongodb://localhost/ethlog_example",
+
+        // Basic authentication.
+        //
+        // [Default] NOT_SET
+        "username": "",
+        "password": ""
+    },
+
+    // List of BSC endpoints for retrieving data.
+    //
+    // [Required] at least a node.
+    "main_bsc_endpoints": [
+        {
+            // URL that refers to BSC node. It must not contain username or
+            // password.
+            //
+            // WARN: Must not use endpoints which is setup as proxy because
+            // routing requests to various nodes make wrong results.
+            //
+            // [Required]
+            "url": "https://rpc-node-01.bravechain.net",
+
+            // Basic authentication.
+            //
+            // [Default] NOT_SET
+            "username": "eth",
+            "password": "JUbUOXC0oOQmBxYK",
+
+            // Limit quanlities of request to BSC nodes.
+            //
+            // [Default] {}
+            "quota": {
+                // Quantities of request in `batch_timespan`.
+                //
+                // [Default] 200
+                "batch_limit": 200,
+
+                // Timespan which is apply for `batch_limit`, in miliseconds.
+                //
+                // [Default] 60,000 = 1 minutes
+                "batch_timespan": 60000
+            },
+
+            // The worker processes logs which is in block number
+            // `n = N - log_safe_gap`. Where N is latest block number
+            // to avoid reorganisation of blockchain.
+            //
+            // Reference: https://docs.binance.org/smart-chain/guides/concepts/consensus.html#security-and-finality
+            //
+            // [Default] 15
+            "log_safe_gap": 15,
+
+            // Greatest block range [from, to] in a request for retrieving
+            // logs from BSC node.
+            //
+            // This one, `log_time_border`, `log_size_border` and
+            // `log_quantity_border` is use for estimating range [from, to]
+            // in a request for retrieving logs from BSC nodes.
+            //
+            // [Default] 5,000
+            "log_range_boundary": 5000,
+
+            // Elapsed time of a retrieving logs, in miliseconds.
+            //
+            // [Default] 6,000
+            "log_time_border": 6000,
+
+            // Data size of a response from eth_getLogs, in bytes.
+            //
+            // [Default] 4,194,304 = 4MB
+            "log_size_border": 4194304,
+
+            // Quantities of log in a response from eth_getLogs.
+            //
+            // [Default] 10,000
+            "log_quantity_border": 10000
+        }
+    ],
+
+    // List of BSC endpoints, it is similar to `main_bsc_endpoints`.
+    // However, these endpoints is use in case all main endpoints is failed.
+    //
+    // [Default] []
+    "backup_bsc_endpoints": [
+    ],
+
+    // Address of hero pool.
+    // Default is WBNB/BUSD on Pancake v2.
+    //
+    // [Default] "0x58f876857a02d6762e0101bb5c46a8c1ed44dc16"
+    "pool_address": "0x58f876857a02d6762e0101bb5c46a8c1ed44dc16",
+
+    // Scan data from this block number, inclusive.
+    // Default is block number when pool WBNB/BUSD on Pancake V2 is created.
+    // This value works for the first time. To reset it, remove setting
+    // `current_block_number` from collection `setting` in database.
+    //
+    // [Default] 6810708
+    "begin_block_number": 6810708,
+
+    // HTTP API listen on this IP address or domain name.
+    //
+    // [Default] "127.0.0.1"
+    "host": "127.0.0.1",
+
+    // HTTP API listen on this port.
+    //
+    // [Default] 8080
+    "port": 8080
+}

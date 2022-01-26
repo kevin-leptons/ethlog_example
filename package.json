@@ -1,0 +1,57 @@
+{
+  "name": "ethlog_example",
+  "version": "0.0.0",
+  "description": "Fetch,  process and save Ethereum logs",
+  "private": true,
+  "engines": {
+    "node": "14"
+  },
+  "files": [
+    "lib",
+    "lib_worker",
+    "lib_api"
+  ],
+  "scripts": {
+    "test": "mocha --recursive --exit",
+    "standardize": "palmito",
+    "start": "node bin/main.js",
+    "worker": "node bin/worker.js",
+    "api": "node bin/api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-leptons/ethlog_example.git"
+  },
+  "keywords": [
+    "etherenum",
+    "eth",
+    "logs",
+    "processing",
+    "data"
+  ],
+  "author": "Kevin Leptons",
+  "license": "UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/kevin-leptons/ethlog_example/issues"
+  },
+  "homepage": "https://github.com/kevin-leptons/ethlog_example#readme",
+  "dependencies": {
+    "@trop/async_router": "0.2.0",
+    "@trop/gear": "0.4.2",
+    "@trop/seed": "2.4.1",
+    "cors": "2.8.5",
+    "ethlog": "0.8.2",
+    "express": "4.17.2",
+    "minitype": "0.5.1",
+    "mongodb": "4.3.1",
+    "stdio_log": "0.10.0",
+    "swagger-parser": "10.0.3",
+    "swagger-ui-express": "4.3.0"
+  },
+  "devDependencies": {
+    "mocha": "9.2.0",
+    "mock-fs": "5.1.2",
+    "mongodb-memory-server": "8.2.0",
+    "palmito": "0.4.0"
+  }
+}

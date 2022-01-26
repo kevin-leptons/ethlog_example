@@ -1,0 +1,25 @@
+{
+    "pint": {
+        "description": "Possitve integer",
+        "type": "integer",
+        "minimum": 1
+    },
+    "uint16": {
+        "description": "Unsigned integer, 16 bits",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 65535
+    },
+    "heximal": {
+        "description": "Heximal string",
+        "type": "string",
+        "pattern": "^0x[a-z0-9]{1,}$",
+        "example": "0x86d7166e"
+    },
+    "heximal32": {
+        "description": "Heximal string, 32 bytes",
+        "type": "string",
+        "pattern": "^0x[a-z0-9]{64}$",
+        "example": "0x39b3c02165de44b28908b9396f086d7166e6b15bfe3f96f92fc92701dc770627"
+    }
+}
